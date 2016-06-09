@@ -1,6 +1,6 @@
 {
   "name": "an-array-of-spanish-words",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An array of ~250,000 Spanish words. Works with Node and Browserify.",
   "main": "palabras.json",
   "bin": {
