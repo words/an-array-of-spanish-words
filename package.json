@@ -1,35 +1,67 @@
 {
   "name": "an-array-of-spanish-words",
   "version": "1.0.1",
-  "description": "An array of ~250,000 Spanish words. Works with Node and Browserify.",
-  "main": "palabras.json",
+  "description": "List of ~636,000 Spanish words",
+  "license": "MIT",
+  "keywords": [
+    "array",
+    "list",
+    "spanish",
+    "español",
+    "words",
+    "palabras",
+    "language",
+    "dictionary",
+    "corpus",
+    "wordlist"
+  ],
+  "repository": "words/an-array-of-spanish-words",
+  "bugs": "https://github.com/words/an-array-of-spanish-words/issues",
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+  "contributors": [
+    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "main": "index.json",
   "bin": {
     "palabras": "./cli.js",
     "an-array-of-spanish-words": "./cli.js"
   },
-  "scripts": {
-    "build": "node build.js > palabras.json"
-  },
-  "repository": "https://github.com/zeke/an-array-of-spanish-words",
-  "keywords": [
-    "spanish",
-    "words",
-    "language",
-    "list",
-    "dictionary",
-    "espanol",
-    "palabras",
-    "corpus",
-    "wordlist"
+  "files": [
+    "index.json",
+    "cli.js"
   ],
-  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zeke/an-array-of-spanish-words/issues"
-  },
-  "homepage": "https://github.com/zeke/an-array-of-spanish-words#readme",
+  "dependencies": {},
   "devDependencies": {
-    "byline": "^4.2.1",
-    "lodash.uniq": "^4.3.0"
+    "bail": "^1.0.0",
+    "concat-stream": "^2.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "xo": "^0.25.0"
+  },
+  "scripts": {
+    "generate": "node build",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "test-api": "node test",
+    "test": "npm run format && npm run test-api"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
